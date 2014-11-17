@@ -5,7 +5,7 @@ require 'version'
 
 Gem::Specification.new do |spec|
   spec.name          = "omniauth-weixin-oauth2"
-  spec.version       = Omniauth::Weixin::VERSION
+  spec.version       = "0.2"
   spec.authors       = ["xuxiaohu"]
   spec.email         = ["xuxiaohu@baozou.com"]
   spec.summary       = %q{TODO: Write a short summary. Required.}
