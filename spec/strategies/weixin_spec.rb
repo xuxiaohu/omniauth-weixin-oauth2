@@ -94,10 +94,10 @@ describe OmniAuth::Strategies::Weixin do
     before { subject.stub(:access_token => access_token) }
 
 
-    context "when scope is snsapi_userinfo" do
+    context "when scope is snsapi_login" do
       let(:access_token) { OAuth2::AccessToken.from_hash(client, {
         "openid"=>"openid", 
-        "scope"=>"snsapi_userinfo", 
+        "scope"=>"snsapi_login", 
         "access_token"=>"access_token"
       })}
 

@@ -5,7 +5,7 @@ version = File.read(File.expand_path('../lib/version', __FILE__)).strip
 
 Gem::Specification.new do |spec|
   spec.name          = "omniauth-weixin-oauth2"
-  spec.version       = "0.2"
+  spec.version       = version
   spec.authors       = ["xuxiaohu"]
   spec.email         = ["xuxiaohu@baozou.com"]
   spec.summary       = %q{TODO: Write a short summary. Required.}

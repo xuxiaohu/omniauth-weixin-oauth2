@@ -28,7 +28,7 @@ module OmniAuth
           province:   raw_info['province'],
           city:       raw_info['city'],
           country:    raw_info['country'],
-          headimgurl: raw_info['headimgurl']
+          image:      raw_info['headimgurl']
         }
       end
 
@@ -47,7 +47,8 @@ module OmniAuth
         @uid ||= access_token["openid"]
         @raw_info ||= begin
           access_token.options[:mode] = :query
-          if access_token["scope"] && access_token["scope"].include?("snsapi_userinfo")
+          # access_token's scope is "snsapi_login" not snsapi_userinfo(fuck), when we want to get userinfo in the /sns/userinfo
+          if access_token["scope"] && access_token["scope"].include?("snsapi_login")
             @raw_info = access_token.get("/sns/userinfo", :params => {"openid" => @uid}, parse: :json).parsed
           else
             @raw_info = {"openid" => @uid }
