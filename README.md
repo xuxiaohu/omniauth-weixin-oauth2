@@ -20,7 +20,21 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+1 Gemfile中增加gem 'omniauth-weixin-oauth2', :git => 'https://github.com/xuxiaohu/omniauth-weixin-oauth2.git'
+2 bundle install
+3 config/initializers/omniauth.rb中
+  Rails.application.config.middleware.use OmniAuth::Builder do
+    provider :weixin, 'appid', 'secret'
+  end
+4 返回结果
+<OmniAuth::AuthHash credentials=#<OmniAuth::AuthHash expires=true expires_at=1416308714 refresh_token="" token=""> extra=#<OmniAuth::AuthHash raw_info=#<OmniAuth::AuthHash city="" country="" headimgurl="" language="zh_CN" nickname="" openid="" privilege=[] province="" sex=1 unionid="">> info=#<OmniAuth::AuthHash::InfoHash city="" country="CN" image="" nickname="" openid="" province="Jiangsu" sex=1> provider="weixin" uid="">
+
+5 callback action中使用
+  request.env['omniauth.auth']['info']
+  request.env['omniauth.auth']['credentials']
+
+6 补充
+  数据格式不一定符合要求，大家自己去 lib/strategies/weinxin.rb该。okay！
 
 ## Contributing
 
