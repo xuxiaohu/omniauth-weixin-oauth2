@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = version
   spec.authors       = ["xuxiaohu"]
   spec.email         = ["xuxiaohu@baozou.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: weixin login and get user info.}
-  spec.homepage      = ""
+  spec.summary       = %q{weixin login and get user info.}
+  spec.description   = %q{weixin login and get user info.}
+  spec.homepage      = "https://github.com/xuxiaohu/omniauth-weixin-oauth2.git"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
